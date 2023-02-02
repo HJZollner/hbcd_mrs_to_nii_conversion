@@ -2,7 +2,7 @@
 FROM debian:stable-20230109-slim
 
 RUN apt update && apt upgrade
-RUN apt install wget build-essential libncursesw5-dev -y
+RUN apt install wget build-essential libreadline-gplv2-dev libncursesw5-dev -y
 RUN wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
 RUN tar xzf Python-3.9.1.tgz
 RUN cd Python-3.9.1
