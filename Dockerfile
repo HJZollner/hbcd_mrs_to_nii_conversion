@@ -25,11 +25,11 @@ RUN gpg --keyring /usr/share/keyrings/conda-archive-keyring.gpg --no-default-key
 RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gpg] https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main" > /etc/apt/sources.list.d/conda.list
 RUN apt update
 RUN apt install conda -y
-ENV PATH=$CONDA_DIR/bin:$PATH
+#ENV PATH=$CONDA_DIR/bin:$PATH
 #RUN source /opt/conda/etc/profile.d/conda.sh
 
 # Install spec2nii
-RUN conda install -c conda-forge spec2nii
+RUN /opt/conda/etc/profile.d/conda.sh install -c conda-forge spec2nii
 
 
 
