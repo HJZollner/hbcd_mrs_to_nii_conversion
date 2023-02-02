@@ -5,10 +5,7 @@ RUN apt update && apt upgrade
 RUN apt install wget build-essential libncursesw5-dev -y
 RUN wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
 RUN tar xzf Python-3.9.1.tgz
-RUN cd Python-3.9.1
-RUN ./configure --enable-optimizations
-RUN make -j 2
-RUN make alt install
+RUN cd Python-3.9.1 && ./configure --enable-optimizations && make -j 2 && make alt install
 
 # Prepare environment
 RUN python3 -m pip install numpy
