@@ -29,7 +29,7 @@ RUN apt install conda -y
 #RUN source /opt/conda/etc/profile.d/conda.sh
 
 # Install spec2nii
-RUN /opt/conda/etc/profile.d/conda.sh install -c conda-forge spec2nii
+RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge spec2nii
 
 
 
