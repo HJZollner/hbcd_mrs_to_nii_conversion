@@ -34,20 +34,9 @@ RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge spec2nii=0.6.1
 # Install FSL-MRS
 RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs=1.1.2
 
-
-
-
-
-#Input some test data that we can use
-RUN mkdir /data
-#COPY tpl-MNI152NLin2009cAsym_res-01_T1w.nii.gz /data/t1.nii.gz
-#COPY tpl-MNI152NLin2009cAsym_res-01_T2w.nii.gz /data/t2.nii.gz
-
-
-#load the python script and tell docker to run that script
-#when someone tries to execute the container
 RUN mkdir /code
-#COPY run.py /code/run.py
-ENTRYPOINT ["python3"]
+COPY spec2nii_HBCD_batch.sh /code/run.sh
 
-RUN chmod 555 -R /code /data
+ENTRYPOINT ["bash", "/code/run.sh"]
+
+RUN chmod 555 -R /code
