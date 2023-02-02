@@ -26,6 +26,8 @@ RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gp
 RUN apt update
 RUN apt install conda -y
 RUN source /opt/conda/etc/profile.d/conda.sh
+
+# Install spec2nii
 RUN conda install -c conda-forge spec2nii
 
 
