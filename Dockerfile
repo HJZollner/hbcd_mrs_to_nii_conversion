@@ -14,7 +14,7 @@ RUN apt update && apt upgrade
 
 RUN apt update && apt upgrade
 RUN apt-get -y install curl
-RUN apt install dcmtk
+RUN apt install dcmtk -y
 
 
 #Input some test data that we can use
