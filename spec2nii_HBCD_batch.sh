@@ -40,7 +40,7 @@ OutputDIR=$2
 mkdir -p $OutputDIR
 
 # Directory for temporary files:
-Staging=$PWD
+Staging=$OutputDIR
 Staging="$Staging"/temp/
 
 # Extract info from zip file name
