@@ -7,7 +7,7 @@ RUN python3 -m pip install nibabel==3.2.2
 RUN python3 -m pip install matplotlib==3.5.1
 
 RUN apt-get -y install curl
-RUN apt install dcmtk
+RUN apt-get install dcmtk
 
 
 #Input some test data that we can use
