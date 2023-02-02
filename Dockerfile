@@ -6,7 +6,7 @@ RUN apt install wget build-essential libncursesw5-dev -y
 RUN wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
 RUN tar xzf Python-3.9.1.tgz
 RUN cd Python-3.9.1
-RUN . /configure --enable-optimizations
+RUN ./configure --enable-optimizations
 RUN make -j 2
 RUN make alt install
 
