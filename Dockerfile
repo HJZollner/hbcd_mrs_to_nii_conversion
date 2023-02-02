@@ -19,6 +19,10 @@ RUN apt install conda -y
 ENV PATH=/opt/conda/bin:$PATH
 #RUN source /opt/conda/etc/profile.d/conda.sh
 
+RUN mkdir /code
+COPY enviorment.yml /code/enviorment.yml
+RUN conda env create -f /code/enviorment.yml
+
 #NEW LINE
 SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
 
@@ -30,7 +34,6 @@ RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge -c defaults -c
 
 RUN apt install -y unar
 
-RUN mkdir /code
 COPY spec2nii_HBCD_batch.sh /code/run.sh
 
 #ENTRYPOINT ["bash", "/opt/conda/etc/profile.d/conda.sh", "activate", "&&", "bash", "/code/run.sh"]
