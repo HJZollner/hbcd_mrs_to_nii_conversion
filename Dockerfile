@@ -17,7 +17,7 @@ RUN apt-get -y install curl
 RUN apt install dcmtk -y
 
 #RUN curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | gpg --dearmor > conda.gpg install -o root -g root -m 644 conda.gpg /usr/share/keyrings/conda-archive-keyring.gpg
-RUN apt install gnupg 
+RUN apt install gnupg -y
 RUN curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | gpg --dearmor > conda.gpg
 RUN install -o root -g root -m 644 conda.gpg /usr/share/keyrings/conda-archive-keyring.gpg
 
