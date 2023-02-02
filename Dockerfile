@@ -31,6 +31,9 @@ RUN apt install conda -y
 # Install spec2nii
 RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge spec2nii
 
+# Install FSL-MRS
+RUN /opt/conda/etc/profile.d/conda.sh install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs
+
 
 
 
