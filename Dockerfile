@@ -1,5 +1,14 @@
 #Python base image
-FROM python:latest
+FROM debian:stable-20230109-slim
+
+RUN apt update && apt upgrade
+RUN apt install wget build-essential libreadline-gplv2-dev libncursesw5-dev
+RUN wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
+RUN tar xzf Python-3.9.1.tgz
+RUN cd Python-3.9.1
+RUN . /configure --enable-optimizations
+RUN make -j 2
+RUN make alt install
 
 # Prepare environment
 RUN python3 -m pip install numpy
@@ -7,7 +16,7 @@ RUN python3 -m pip install nibabel==3.2.2
 RUN python3 -m pip install matplotlib==3.5.1
 
 RUN apt-get -y install curl
-RUN apt-get install dcmtk
+RUN apt install dcmtk
 
 
 #Input some test data that we can use
