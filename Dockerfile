@@ -12,11 +12,12 @@ RUN apt update && apt upgrade
 #RUN python3 -m pip install nibabel==3.2.2
 #RUN python3 -m pip install matplotlib==3.5.1
 
+# Installation for dcmtk
 RUN apt update && apt upgrade
 RUN apt-get -y install curl
 RUN apt install dcmtk -y
 
-#RUN curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | gpg --dearmor > conda.gpg install -o root -g root -m 644 conda.gpg /usr/share/keyrings/conda-archive-keyring.gpg
+# Installation for conda
 RUN apt install gnupg -y
 RUN curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | gpg --dearmor > conda.gpg
 RUN install -o root -g root -m 644 conda.gpg /usr/share/keyrings/conda-archive-keyring.gpg
@@ -24,6 +25,11 @@ RUN gpg --keyring /usr/share/keyrings/conda-archive-keyring.gpg --no-default-key
 RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gpg] https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main" > /etc/apt/sources.list.d/conda.list
 RUN apt update
 RUN apt install conda -y
+RUN conda install -c conda-forge spec2nii
+
+
+
+
 
 #Input some test data that we can use
 RUN mkdir /data
