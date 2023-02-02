@@ -1,5 +1,5 @@
 #Python base image
-FROM python::3.8.16-slim-bullseye
+FROM python:3.8.16-slim-bullseye
 
 RUN apt update && apt upgrade
 #RUN apt install wget build-essential libncursesw5-dev -y
