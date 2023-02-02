@@ -16,7 +16,7 @@ RUN mkdir /data
 #load the python script and tell docker to run that script
 #when someone tries to execute the container
 RUN mkdir /code
-COPY run.py /code/run.py
-ENTRYPOINT ["python3", "/code/run.py"]
+#COPY run.py /code/run.py
+ENTRYPOINT ["python3"]
 
 RUN chmod 555 -R /code /data
