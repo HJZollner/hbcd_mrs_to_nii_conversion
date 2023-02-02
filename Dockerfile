@@ -39,6 +39,6 @@ RUN apt install -y unar
 RUN mkdir /code
 COPY spec2nii_HBCD_batch.sh /code/run.sh
 
-ENTRYPOINT ["bash", "/opt/conda/etc/profile.d/conda.sh", "&&", "/code/run.sh"]
+ENTRYPOINT ["bash", "/opt/conda/etc/profile.d/conda.sh", "activate", "&&", "/code/run.sh"]
 
 RUN chmod 555 -R /code
