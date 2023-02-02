@@ -1,17 +1,6 @@
 #Python base image
 FROM python:3.8.16-slim-bullseye
 
-RUN apt update && apt upgrade
-#RUN apt install wget build-essential libncursesw5-dev -y
-#RUN wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
-#RUN tar xzf Python-3.9.1.tgz
-#RUN cd Python-3.9.1 && ./configure --enable-optimizations && make -j 2 && make alt install
-
-# Prepare environment
-#RUN python3 -m pip install numpy
-#RUN python3 -m pip install nibabel==3.2.2
-#RUN python3 -m pip install matplotlib==3.5.1
-
 # Installation for dcmtk
 RUN apt update && apt upgrade
 RUN apt-get -y install curl
@@ -40,5 +29,6 @@ RUN mkdir /code
 COPY spec2nii_HBCD_batch.sh /code/run.sh
 
 ENTRYPOINT ["bash", "/opt/conda/etc/profile.d/conda.sh", "activate", "&&", "/code/run.sh"]
+#ENTRYPOINT ["bash", "/code/run.sh"]
 
 RUN chmod 555 -R /code
