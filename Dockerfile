@@ -9,8 +9,8 @@ RUN python3 -m pip install matplotlib==3.5.1
 
 #Input some test data that we can use
 RUN mkdir /data
-COPY tpl-MNI152NLin2009cAsym_res-01_T1w.nii.gz /data/t1.nii.gz
-COPY tpl-MNI152NLin2009cAsym_res-01_T2w.nii.gz /data/t2.nii.gz
+#COPY tpl-MNI152NLin2009cAsym_res-01_T1w.nii.gz /data/t1.nii.gz
+#COPY tpl-MNI152NLin2009cAsym_res-01_T2w.nii.gz /data/t2.nii.gz
 
 
 #load the python script and tell docker to run that script
