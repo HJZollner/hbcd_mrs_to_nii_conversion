@@ -6,4 +6,4 @@ channels:
 dependencies:
   - python=3.9
   - spec2nii=0.6.1
-  - fsl_mrs=1.1.2
+  - fsl_mrs=1.1.*
