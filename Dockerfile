@@ -23,6 +23,7 @@ RUN mkdir /code
 COPY environment.yml /code/environment.yml
 RUN conda env create -f /code/environment.yml
 #SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"] #THIS MIGHT BE NECESSARY
+RUN echo "source activate myenv" > ~/.bashrc 
 RUN conda init bash --system
 #RUN exec bash
 
