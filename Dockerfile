@@ -22,7 +22,8 @@ ENV PATH=/opt/conda/bin:$PATH
 RUN mkdir /code
 COPY environment.yml /code/environment.yml
 RUN conda env create -f /code/environment.yml
-ENV conda init bash --system
+RUN conda init bash --system
+RUN exec bash
 
 #NEW LINE
 #SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
