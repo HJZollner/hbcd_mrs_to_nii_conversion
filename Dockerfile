@@ -22,15 +22,16 @@ ENV PATH=/opt/conda/bin:$PATH
 RUN mkdir /code
 COPY environment.yml /code/environment.yml
 RUN conda env create -f /code/environment.yml
-RUN conda init bash --system
-RUN exec bash
+SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
+#RUN conda init bash --system
+#RUN exec bash
 
 #NEW LINE
 #SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
 
 # Install spec2nii
 #RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge spec2nii=0.6.1
-RUN conda activate myenv && conda install -c conda-forge spec2nii=0.6.1
+RUN conda install -c conda-forge spec2nii=0.6.1
 
 # Install FSL-MRS
 #RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs=1.1.2
