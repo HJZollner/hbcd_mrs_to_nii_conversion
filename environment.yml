@@ -1,9 +1,7 @@
 name: myenv
 channels:
   - conda-forge
-  - https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/
   - defaults
 dependencies:
   - python=3.9
   - spec2nii=0.6.1
-  - fsl_mrs=1.1.*
