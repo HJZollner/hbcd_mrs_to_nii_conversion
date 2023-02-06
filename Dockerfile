@@ -25,19 +25,12 @@ RUN conda env create -f /code/environment.yml
 #SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"] #THIS MIGHT BE NECESSARY
 RUN echo "source activate myenv" > ~/.bashrc 
 RUN conda init bash --system
-#RUN exec bash
 
 #NEW LINE
 #SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
 
-# Install spec2nii
-#RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge spec2nii=0.6.1
-#RUN conda install -c conda-forge spec2nii=0.6.1
-
-# Install FSL-MRS
-#RUN bash /opt/conda/etc/profile.d/conda.sh install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs=1.1.2
-#THIS MIGHT BE FINE ---- RUN conda install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs
-RUN conda install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs=1.1.2
+# Install FSL-MRS (not needed anymore, but keeping here for reference)
+#RUN conda install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs
 
 
 RUN apt install -y unar
