@@ -30,7 +30,7 @@ RUN conda init bash --system
 #SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
 
 # Install FSL-MRS (not needed anymore, but keeping here for reference)
-#RUN conda install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs
+RUN conda install -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs
 
 
 RUN apt install -y unar
