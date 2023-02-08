@@ -89,6 +89,7 @@ do
     # Find zip archive with .data/.list pair ignore DICOM zip
      if ! [[ $file == "Classic_DICOM.zip" ]]; then
        Format="data"
+       path="$Staging"/unar
        unar $f -o $path -f -d #unar $f -o $path -f -D
        # Move .data/.list pair in temporary directory
         for dl in $(find "$path" -type f -name "*.list");
